@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Produto {
+
     private final String nome;
     private double preco;
     private int quantidade;
@@ -12,6 +13,13 @@ public class Produto {
         this.preco = preco;
         this.quantidade = quantidade;
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+
+
 
 
 

@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -8,21 +9,16 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         boolean loop = true;
         List<Produto> estoque = new ArrayList<>();
-        while(loop){
+        GerenciadorProdutos gerenciadorProdutos = new GerenciadorProdutos();
+        while (loop) {
             System.out.println("Olá seja bem-vindo!!");
-            System.out.println("----Menu----" +
-                    "\n1 para Cadastrar Produto\n" +
-                    "2 para Listar Todos os Produtos\n" +
-                    "3 para Registrar Entrada de Estoque\n" +
-                    "4 para Registrar Saída de Estoque\n" +
-                    "5 para Atualizar Preço de Produto\n" +
-                    "6 para Remover Produto\n" +
-                    "7 para Sair");
+            System.out.println("\n----Menu----" + "\n1 para Cadastrar Produto\n" + "2 para Listar Todos os Produtos\n" + "3 para Registrar Entrada de Estoque\n" + "4 para Registrar Saída de Estoque\n" + "5 para Atualizar Preço de Produto\n" + "6 para Remover Produto\n" + "7 para Sair");
             int menu = scan.nextInt();
             scan.nextLine();
 
-            switch (menu){
+            switch (menu) {
                 case 1:
+
                     System.out.println("Digite o nome do produto: ");
                     String nome = scan.nextLine();
                     System.out.println("Digite o preço do produto: ");
@@ -31,6 +27,9 @@ public class Main {
                     System.out.println("Digite a quantidade do produto: ");
                     int quantidade = scan.nextInt();
                     scan.nextLine();
+                    gerenciadorProdutos.CadastrarProduto(nome, preco, quantidade, estoque);
+
+
                     break;
                 case 2:
 
@@ -43,10 +42,8 @@ public class Main {
                 case 4:
 
 
-
                     break;
                 case 5:
-
 
 
                     break;
