@@ -71,11 +71,11 @@ public class GerenciadorEstoque {
         Produto produtoSaida = estoque.get(nomeSaida);
 
         if (produtoSaida != null) {
-            if (produtoSaida.getQuantidade() == 0) {
-                System.out.println("Estoque insuficiente");
-            } else {
+            if (quantidade <= produtoSaida.getQuantidade()) {
                 int saida = produtoSaida.getQuantidade() - quantidade;
                 produtoSaida.setQuantidade(saida);
+            } else {
+                System.out.println("Estoque insuficiente");
             }
         } else {
             System.err.println("Erro, Produto não cadastrado");
